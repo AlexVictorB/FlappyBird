@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-TileColor" content="#41b883">
+    <meta name="theme-color" content="#41b883">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/icons/icon-128x128.png">
+    <link rel="icon" type="image/png" sizes="72x72"  href="/img/icons/icon-72x72.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96"  href="/img/icons/icon-96x96.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="128x128"  href="/img/icons/icon-128x128.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/icons/icon-192x192.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="https://www.webbird.tk/">
     <title>FlappyBird</title>
     <style>
         @font-face {
@@ -28,9 +37,9 @@
             box-shadow: 2px 1px 12px black;
             font-family: Flappy;
             font-size: 40px;
-            color: black;
+            color: #000000;
             width: 250px;
-            height: 100px;
+            height: 125px;
             background-color: white;
             position: absolute;
             text-align: center;
@@ -38,8 +47,21 @@
         }
 
         #btn_again {
-            background-color: aqua;
+            margin-top: 10px;
+            cursor: pointer;
+            background: rgb(40, 194, 143);
+            border: 0;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
             
+        }
+
+        #btn_again:hover {
+            background: rgb(136, 155, 149);
         }
     </style>
 </head>
@@ -56,6 +78,7 @@
 
     <canvas id="stage" width="288" height="512"></canvas>
     <script>
+
         var stage = document.getElementById("stage");
         var ctx = stage.getContext("2d");
 
