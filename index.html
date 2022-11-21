@@ -20,6 +20,7 @@
             src: url("fonts/flappy.ttf")
         }
 
+
         #modal {
             background: #000000cc;
             height: 512px;
@@ -29,7 +30,6 @@
         }
 
         #game_over {
-            
             top: 180px;
             left: 25px;
             padding-top: 10px;
@@ -107,12 +107,15 @@
 
         var fly = new Audio();
         var scor = new Audio();
+        var music_back = new Audio()
 
         fly.src = "sounds/fly.mp3";
         scor.src = "sounds/score.mp3";
+        music_back.src = "sounds/background.mp3";
         
         //Events
         document.addEventListener("keydown", moveUp);
+        document.addEventListener("click", moveUp);
         document.getElementById("btn_again").addEventListener("click", playAgain)
 
         function moveUp() {
@@ -136,7 +139,7 @@
         function gameOver() {
             continua = false;
             document.getElementById("pontos_details").innerText = score;
-            document.getElementById("modal").style = "display: inline";
+            document.getElementById("modal").style = "display: flex";
             document.getElementById("game_over").style = "display: inline";
             gravity = 0;
         }
@@ -165,6 +168,9 @@
 
         function draw() {
             ctx.drawImage(bg, 0, 0);
+
+            music_back.volume = 0.5;
+            //music_back.play()
 
             for(var i = 0; i < pipe.length; i++) {
 
